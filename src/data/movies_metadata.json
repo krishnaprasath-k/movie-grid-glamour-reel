@@ -1,0 +1,63 @@
+
+[
+  {
+    "title": "The Shawshank Redemption",
+    "tagline": "Fear can hold you prisoner. Hope can set you free.",
+    "vote_average": 9.3
+  },
+  {
+    "title": "The Godfather",
+    "tagline": "An offer you can't refuse.",
+    "vote_average": 9.2
+  },
+  {
+    "title": "The Dark Knight",
+    "tagline": "Welcome to a world without rules.",
+    "vote_average": 9.0
+  },
+  {
+    "title": "Pulp Fiction",
+    "tagline": "Just because you are a character doesn't mean you have character.",
+    "vote_average": 8.9
+  },
+  {
+    "title": "Forrest Gump",
+    "tagline": "Life is like a box of chocolates...",
+    "vote_average": 8.8
+  },
+  {
+    "title": "Inception",
+    "tagline": "Your mind is the scene of the crime.",
+    "vote_average": 8.8
+  },
+  {
+    "title": "The Matrix",
+    "tagline": "Free your mind.",
+    "vote_average": 8.7
+  },
+  {
+    "title": "Goodfellas",
+    "tagline": "Three decades of life in the mafia.",
+    "vote_average": 8.7
+  },
+  {
+    "title": "The Lord of the Rings: The Return of the King",
+    "tagline": "The eye of the enemy is moving.",
+    "vote_average": 8.9
+  },
+  {
+    "title": "Schindler's List",
+    "tagline": "Whoever saves one life, saves the world entire.",
+    "vote_average": 8.9
+  },
+  {
+    "title": "Fight Club",
+    "tagline": "Mischief. Mayhem. Soap.",
+    "vote_average": 8.8
+  },
+  {
+    "title": "The Lord of the Rings: The Fellowship of the Ring",
+    "tagline": "One ring to rule them all.",
+    "vote_average": 8.8
+  }
+]
