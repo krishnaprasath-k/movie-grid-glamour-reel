@@ -1,73 +1,63 @@
-# Welcome to your Lovable project
+***Important note***:
 
-## Project info
+This assignment is meant to be completed within **a maximum of 2 hours**.
 
-**URL**: https://lovable.dev/projects/c3e6dd22-2d0a-44b9-936b-d0e149a88ea1
+Just attempt this assignment, and submit your code before **2 hours** is up, regardless of whether it is fully completed.
 
-## How can I edit this code?
+You may provide **additional documentation** on how you would continue with this assignment if you were given more time.
 
-There are several ways of editing your application.
+# Overview
 
-**Use Lovable**
+You are required to build a simple fullstack web application that displays a list of movies and movie details.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/c3e6dd22-2d0a-44b9-936b-d0e149a88ea1) and start prompting.
+Within this project is an existing application boilerplate (React + Node), but you are free to modify it as you want to.
 
-Changes made via Lovable will be committed automatically to this repo.
+# Steps
 
-**Use your preferred IDE**
+1. Start editing code to complete this assignment
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+# Details
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+* The backend server should load data from the movies data file found in `server/movies_metadata.json`.
+* The backend server should expose APIs to the frontend to achieve the following:
+  * List movies
+  * Get single movie by ID
+* The frontend web application should display 2 different screens:
+  * List movies page (shown initially)
+    * Display the following fields (`title`, `tagline` and `vote_average` [calculated out of 10]) with **responsive web design** (e.g. show 4 columns on a desktop but show only 1 column on a mobile device)
+  * Display single movie page upon clicking movie in list page
+    * Display every field (`release_date` should be localized based on browser settings. `runtime` is calculated in minutes)
+    * Display a button/link to return to list movies page
 
-Follow these steps:
+**Additional**
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+* Any criteria not stated above may not result in bonus points
+* **Responsive web design** is explained here: [https://www.w3schools.com/html/html_responsive.asp](https://www.w3schools.com/html/html_responsive.asp)
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Code Submission
 
-# Step 3: Install the necessary dependencies.
-npm i
+1. Upload to a public Github repository or a cloud drive (e.g. Google Drive, OneDrive) your code, and email the shared link
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+*Don't bother trying to email the code directly, because the email attachment will be blocked.*
 
-**Edit a file directly in GitHub**
+# Further Project Details (Optional)
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Starter Project - create-react-app and Express
 
-**Use GitHub Codespaces**
+This starter project runs both a webpack development server for front-end work and a back-end server in the same project, at the same time. This is a common scenario when you're building your front end with [create-react-app], and your back end with [Express].
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+This starter app will get you on your way with this scenario!
 
-## What technologies are used for this project?
+## Forwarding requests via a proxy
 
-This project is built with:
+In **package.json**...
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+1. if you set your `start` script to `"npm run production"`, it will build the React app and Express will serve the static bundle over port 3000.
 
-## How can I deploy this project?
+2. if you set your `start` script to `"npm run development"`, it will concurrently start the webpack dev server/watcher and the Express server. The latter will be listening on port 3001, but you don't need to change anything in your code because: proxies!
 
-Simply open [Lovable](https://lovable.dev/projects/c3e6dd22-2d0a-44b9-936b-d0e149a88ea1) and click on Share -> Publish.
+As it stands, the server listens for requests to `/api`; to get this working in `development` mode, we're using [`http-proxy-middleware`] in **src/setupProxy.js** to forward any incoming request to `/api/whatever/endpoint/you/have` over to the `target`, i.e., the Express server.
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+[create-react-app]: https://create-react-app.dev
+[Express]: https://expressjs.com/
+[`http-proxy-middleware`]: https://github.com/chimurai/http-proxy-middleware
