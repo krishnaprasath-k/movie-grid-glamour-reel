@@ -102,6 +102,33 @@ export type Database = {
           },
         ]
       }
+      movies: {
+        Row: {
+          created_at: string | null
+          created_by: string | null
+          id: string
+          tagline: string | null
+          title: string
+          vote_average: number | null
+        }
+        Insert: {
+          created_at?: string | null
+          created_by?: string | null
+          id?: string
+          tagline?: string | null
+          title: string
+          vote_average?: number | null
+        }
+        Update: {
+          created_at?: string | null
+          created_by?: string | null
+          id?: string
+          tagline?: string | null
+          title?: string
+          vote_average?: number | null
+        }
+        Relationships: []
+      }
       providers: {
         Row: {
           accepts_insurance: boolean | null
@@ -150,6 +177,27 @@ export type Database = {
           rating?: number | null
           review_count?: number | null
           specialty?: string | null
+        }
+        Relationships: []
+      }
+      user_profiles: {
+        Row: {
+          created_at: string | null
+          id: string
+          role: string | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          role?: string | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          role?: string | null
+          user_id?: string
         }
         Relationships: []
       }
